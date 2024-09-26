@@ -56,6 +56,10 @@ INSTALLED_APPS = [
 
 ]
 
+REST_AUTH ={
+    'SESSION_lOGIN':False,
+}
+
 SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
