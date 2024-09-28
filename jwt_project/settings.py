@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     #JWT
     'rest_framework_simplejwt.token_blacklist',
 
+    #Local Apps
+    'blogs.apps.BlogsConfig',
+
 
 ]
 
@@ -69,6 +72,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ]
 }
