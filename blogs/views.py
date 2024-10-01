@@ -9,6 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 class BlogList(generics.ListCreateAPIView):
+    permission_classes = (IsAuthenticated,)
     serializer_class = BlogSerializer
     queryset = Blog.objects.all()
 

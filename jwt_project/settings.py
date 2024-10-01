@@ -87,9 +87,9 @@ REST_AUTH = {
     'USE_JWT':True,
     'JWT_AUTH_COOKIE': 'my-app-auth',
     'JWT_AUTH_REFRESH_TOKE': 'my-refresh-token',
-    'JWT_RETURN_EXPIRATION': 'True',
+    'JWT_RETURN_EXPIRATION': True,
     'JWT_AUTH_HTTPONLY':False,
-    
+
     'OLD_PASSWORD_FIELD_ENABLED': True,
     'LOGOUT_ON_PASSWORD_CHANGE':False,
 
