@@ -59,9 +59,6 @@ INSTALLED_APPS = [
 
 ]
 
-REST_AUTH ={
-    'SESSION_lOGIN':False,
-}
 
 SITE_ID = 1
 
@@ -72,8 +69,9 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES':[
-        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        
     ]
 }
 
@@ -83,6 +81,18 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True, #Enable Token Blacklisting
     'AUTH_HEADER_TYPES':('Bearer',), #Prefix Used In Authorization Header
+}
+
+REST_AUTH = {
+    'USE_JWT':True,
+    'JWT_AUTH_COOKIE': 'my-app-auth',
+    'JWT_AUTH_REFRESH_TOKE': 'my-refresh-token',
+    'JWT_RETURN_EXPIRATION': 'True',
+    'JWT_AUTH_HTTPONLY':False,
+    
+    'OLD_PASSWORD_FIELD_ENABLED': True,
+    'LOGOUT_ON_PASSWORD_CHANGE':False,
+
 }
 
 MIDDLEWARE = [
